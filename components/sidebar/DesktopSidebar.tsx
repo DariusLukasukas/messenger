@@ -6,7 +6,8 @@ import SettingsModal from "../modals/SettingsModal";
 import { useState } from "react";
 import Avatar from "../ui/avatar/Avatar";
 import { User } from "@prisma/client";
-import { TbMessages, TbSettings } from "react-icons/tb";
+import { TbLogout, TbMessages, TbSettings } from "react-icons/tb";
+import { signOut } from "next-auth/react";
 
 interface DesktopSidebarProps {
   currentUser: User;
@@ -53,7 +54,6 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
                 label={item.label}
                 icon={item.icon}
                 active={item.active}
-                onClick={item.onClick}
               />
             ))}
           </ul>
@@ -63,6 +63,12 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
               className="cursor-pointer hover:opacity-75 rounded-md transition p-3 text-gray-500 hover:text-black hover:bg-gray-100"
             >
               <TbSettings size={24} className="shrink-0" aria-hidden="true" />
+            </div>
+            <div
+              onClick={() => signOut()}
+              className="cursor-pointer hover:opacity-75 rounded-md transition p-3 text-gray-500 hover:text-black hover:bg-gray-100"
+            >
+              <TbLogout size={24} className="shrink-0" aria-hidden="true" />
             </div>
             <Avatar user={currentUser} />
           </div>

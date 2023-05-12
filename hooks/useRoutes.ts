@@ -1,8 +1,7 @@
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
-import { signOut } from "next-auth/react";
 import useConversation from "./useConversation";
-import { TbLogout, TbMessage, TbUsers } from "react-icons/tb";
+import { TbMessage, TbUsers } from "react-icons/tb";
 
 const useRoutes = () => {
   const pathname = usePathname();
@@ -21,12 +20,6 @@ const useRoutes = () => {
         href: "/users",
         icon: TbUsers,
         active: pathname === "/users",
-      },
-      {
-        label: "Logout",
-        onClick: () => signOut(),
-        href: "/login",
-        icon: TbLogout,
       },
     ],
     [pathname, conversationId]
