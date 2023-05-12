@@ -1,7 +1,7 @@
 import "./globals.css";
 import AuthProvider from "../components/auth/AuthProvider";
 import ActiveStatus from "../components/ui/avatar/ActiveStatus";
-import ToasterToggle from "../components/ui/toaster/ToasterToggle";
+import { Toaster } from "@/components/ui/toast/toaster";
 
 export const metadata = {
   title: "Messenger",
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AuthProvider>
-          <ToasterToggle />
+          <Toaster />
           <ActiveStatus />
           {children}
         </AuthProvider>

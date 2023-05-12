@@ -9,7 +9,6 @@ import { useRouter } from "next/navigation";
 
 import Input from "@/components/ui/inputs/Input";
 import AuthSocialButton from "./AuthSocialButton";
-// import Button from "@/components/ui/button/Button";
 import { toast } from "react-hot-toast";
 import { Button } from "../ui/button/Button";
 import { TbMessages } from "react-icons/tb";

@@ -11,7 +11,8 @@ import Input from "../ui/inputs/Input";
 import Modal from "../ui/modal/Modal";
 import Image from "next/image";
 import { toast } from "react-hot-toast";
-import { Button } from "../ui/button/Button";
+import { Button, buttonVariants } from "../ui/button/Button";
+import { cn } from "@/lib/utils";
 
 interface SettingsModalProps {
   isOpen?: boolean;
@@ -97,13 +98,11 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                       onUpload={handleUpload}
                       uploadPreset="ckzbihbl"
                     >
-                      <Button
-                        disabled={isLoading}
-                        variant={"secondary"}
-                        type="button"
+                      <div
+                        className={cn(buttonVariants({ variant: "secondary" }))}
                       >
                         Change
-                      </Button>
+                      </div>
                     </CldUploadButton>
                   </div>
                 </div>

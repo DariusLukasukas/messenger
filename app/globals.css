@@ -85,3 +85,7 @@ body,
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+.registerbg {
+  background: linear-gradient(220.55deg, #565656 0%, #181818 100%);
+}

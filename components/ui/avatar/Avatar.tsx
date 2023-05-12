@@ -17,19 +17,20 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
     <div className="relative">
       <div
         className="
-        relative 
-        inline-block 
+        relative
+        inline-block
         rounded-lg
         overflow-hidden
         object-contain
-        h-9 
-        w-9 
-        md:h-11 
+        h-9
+        w-9
+        md:h-11
         md:w-11
       "
       >
         <Image
-          fill={true}
+          fill
+          sizes="auto"
           alt="Avatar"
           src={user?.image || "/images/placeholder.jpg"}
           className="w-full h-auto"
@@ -39,17 +40,17 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
       {isActive ? (
         <span
           className="
-            absolute 
-            block 
-            rounded-full 
-            bg-green-500 
-            ring-2 
-            ring-white 
-            top-0 
+            absolute
+            block
+            rounded-full
+            bg-green-500
+            ring-2
+            ring-white
+            top-0
             right-0
-            h-2 
-            w-2 
-            md:h-3 
+            h-2
+            w-2
+            md:h-3
             md:w-3
           "
         />

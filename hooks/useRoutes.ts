@@ -25,7 +25,7 @@ const useRoutes = () => {
       {
         label: "Logout",
         onClick: () => signOut(),
-        href: "#",
+        href: "/login",
         icon: TbLogout,
       },
     ],

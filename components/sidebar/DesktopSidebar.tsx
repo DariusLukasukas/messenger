@@ -41,7 +41,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
         justify-start
       "
       >
-        <nav className="flex flex-col justify-between">
+        <nav className="flex flex-col justify-between h-full">
           <ul role="list" className="flex flex-col items-center space-y-1">
             <div className="text-blue-500 pt-4 mb-4">
               <TbMessages size={24} className="shrink-0" aria-hidden="true" />
@@ -56,19 +56,14 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
                 onClick={item.onClick}
               />
             ))}
+          </ul>
+          <div className="mt-4 flex flex-col space-y-1 items-center">
             <div
               onClick={() => setIsOpen(true)}
-              className="cursor-pointer hover:opacity-75 transition p-3 text-gray-500 hover:text-black hover:bg-gray-100 order-1"
+              className="cursor-pointer hover:opacity-75 rounded-md transition p-3 text-gray-500 hover:text-black hover:bg-gray-100"
             >
               <TbSettings size={24} className="shrink-0" aria-hidden="true" />
             </div>
-          </ul>
-        </nav>
-        <nav className="mt-4 flex flex-col justify-between items-center">
-          <div
-            // onClick={() => setIsOpen(true)}
-            className="cursor-pointer hover:opacity-75 transition"
-          >
             <Avatar user={currentUser} />
           </div>
         </nav>
