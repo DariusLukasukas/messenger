@@ -23,6 +23,7 @@ const UserList: React.FC<UserListProps> = ({ items }) => {
         border-r
         border-gray-200
         block w-full left-0
+        dark:border-neutral-600
       "
     >
       <div className="px-5">
@@ -32,15 +33,18 @@ const UserList: React.FC<UserListProps> = ({ items }) => {
               text-2xl
               font-bold
               text-neutral-800
+              dark:text-white
               py-4
             "
           >
             People
           </div>
         </div>
-        {items.map((item) => (
-          <UserBox key={item.id} data={item} />
-        ))}
+        <div className="flex flex-col gap-2">
+          {items.map((item) => (
+            <UserBox key={item.id} data={item} />
+          ))}
+        </div>
       </div>
     </aside>
   );

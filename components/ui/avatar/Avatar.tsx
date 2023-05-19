@@ -45,8 +45,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
             rounded-full
             bg-green-500
             ring-2
-            ring-white
-            top-0
+            bottom-0
             right-0
             h-2
             w-2

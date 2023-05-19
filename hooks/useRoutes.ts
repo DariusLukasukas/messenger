@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import useConversation from "./useConversation";
-import { TbMessage, TbUsers } from "react-icons/tb";
+import { TbLogout, TbMessage, TbUsers } from "react-icons/tb";
+import { signOut } from "next-auth/react";
 
 const useRoutes = () => {
   const pathname = usePathname();

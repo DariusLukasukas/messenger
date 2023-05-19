@@ -42,8 +42,9 @@ const Form = () => {
       className="
         py-4
         px-4
-        bg-white
+        bg-background
         border-t
+        border-neutral-600
         flex
         items-center
         gap-2
@@ -56,7 +57,7 @@ const Form = () => {
         onUpload={handleUpload}
         uploadPreset="ckzbihbl"
       >
-        <HiPhoto size={30} className="text-neutral-800" />
+        <HiPhoto size={30} className="text-neutral-800 dark:text-neutral-200" />
       </CldUploadButton>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -74,12 +75,13 @@ const Form = () => {
           className="
             rounded-lg
             bg-black hover:bg-opacity-70
+            dark:bg-neutral-200
             p-2
             cursor-pointer
             transition
           "
         >
-          <FiSend size={18} className="text-white" />
+          <FiSend size={18} className="text-white dark:text-black" />
         </button>
       </form>
     </div>

@@ -42,10 +42,11 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
       />
       <div
         className="
-        bg-white
+        bg-background
         w-full
         flex
         border-b-[1px]
+        border-neutral-600
         sm:px-4
         py-3
         px-4
@@ -84,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         <HiEllipsisHorizontal
           size={32}
           onClick={() => setDrawerOpen(true)}
-          className="text-black cursor-pointer hover:text-neutral-800 transition"
+          className="text-black dark:text-white cursor-pointer hover:text-neutral-800 transition"
         />
       </div>
     </>

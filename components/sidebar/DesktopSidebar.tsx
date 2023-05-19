@@ -4,10 +4,10 @@ import DesktopItem from "./DesktopItem";
 import useRoutes from "@/hooks/useRoutes";
 import SettingsModal from "../modals/SettingsModal";
 import { useState } from "react";
-import Avatar from "../ui/avatar/Avatar";
 import { User } from "@prisma/client";
-import { TbLogout, TbMessages, TbSettings } from "react-icons/tb";
-import { signOut } from "next-auth/react";
+import { TbMessages, TbSettings } from "react-icons/tb";
+import { UserAccountNav } from "./UserAccountNav";
+import Image from "next/image";
 
 interface DesktopSidebarProps {
   currentUser: User;
@@ -40,12 +40,20 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
         md:flex
         md:flex-col
         justify-start
+        dark:bg-background
+        dark:border-neutral-600
       "
       >
         <nav className="flex flex-col justify-between h-full">
           <ul role="list" className="flex flex-col items-center space-y-1">
             <div className="text-blue-500 pt-4 mb-4">
-              <TbMessages size={24} className="shrink-0" aria-hidden="true" />
+              <Image
+                height="48"
+                width="48"
+                className="mx-auto w-auto"
+                src="/images/logo.png"
+                alt="Logo"
+              />
             </div>
             {routes.map((item) => (
               <DesktopItem
@@ -64,13 +72,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
             >
               <TbSettings size={24} className="shrink-0" aria-hidden="true" />
             </div>
-            <div
-              onClick={() => signOut()}
-              className="cursor-pointer hover:opacity-75 rounded-md transition p-3 text-gray-500 hover:text-black hover:bg-gray-100"
-            >
-              <TbLogout size={24} className="shrink-0" aria-hidden="true" />
-            </div>
-            <Avatar user={currentUser} />
+            <UserAccountNav user={currentUser} />
           </div>
         </nav>
       </div>

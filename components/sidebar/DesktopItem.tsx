@@ -13,12 +13,14 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
   label,
   href,
   icon: Icon,
+  onClick,
   active,
 }) => {
   return (
     <li key={label}>
       <Link
         href={href}
+        onClick={onClick}
         className={clsx(
           `
             group

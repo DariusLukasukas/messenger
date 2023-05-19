@@ -97,16 +97,18 @@ const ConversationList: React.FC<ConversationListProps> = ({
         md:left-20
         md:w-80
         md:block
+        md:border-r
         overflow-y-auto
-        border-r
-        border-gray-200
+       md:border-neutral-600
       `,
           isOpen ? "hidden" : "block w-full left-0"
         )}
       >
         <div className="px-5">
           <div className="flex justify-between items-center mb-4 pt-4">
-            <div className="text-2xl font-bold text-neutral-800">Messages</div>
+            <div className="text-2xl font-bold text-neutral-800 dark:text-white">
+              Messages
+            </div>
             <div
               onClick={() => setIsModalOpen(true)}
               className="
@@ -119,13 +121,15 @@ const ConversationList: React.FC<ConversationListProps> = ({
               <HiOutlinePencilSquare size={24} />
             </div>
           </div>
-          {items.map((item) => (
-            <ConversationBox
-              key={item.id}
-              data={item}
-              selected={conversationId === item.id}
-            />
-          ))}
+          <div className="flex flex-col gap-2">
+            {items.map((item) => (
+              <ConversationBox
+                key={item.id}
+                data={item}
+                selected={conversationId === item.id}
+              />
+            ))}
+          </div>
         </div>
       </aside>
     </>

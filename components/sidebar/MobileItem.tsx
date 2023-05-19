@@ -4,18 +4,18 @@ import clsx from "clsx";
 
 interface MobileItemProps {
   label: string;
-  href: string;
   icon: any;
-  active?: boolean;
+  href: string;
   onClick?: () => void;
+  active?: boolean;
 }
 
 const MobileItem: React.FC<MobileItemProps> = ({
   label,
   href,
   icon: Icon,
-  active,
   onClick,
+  active,
 }) => {
   const handleClick = () => {
     if (onClick) {
